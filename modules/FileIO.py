@@ -5,12 +5,12 @@ def write_output(phonons,params,lattice,eigen_vectors):
         np.savetxt(params.out_prefix+'.pSED',phonons.sed_avg,fmt='%.6f')
 #        np.savetxt(params.out_prefix+'.PDoS',phonons.pdos,fmt='%.6f')
         np.savetxt(params.out_prefix+'.Qpts',lattice.reduced_qpoints,fmt='%.6f')
-        np.savetxt(params.out_prefix+'.THz',phonons.thz,fmt='%.2f')
+        np.savetxt(params.out_prefix+'.THz',phonons.thz,fmt='%.6f')
     else: 
         np.savetxt(params.out_prefix+'_BAND-TOTAL.pSED',phonons.sed_avg,fmt='%.6f')
 #        np.savetxt(params.out_prefix+'.PDoS',phonons.pdos,fmt='%.6f')
         np.savetxt(params.out_prefix+'.Qpts',lattice.reduced_qpoints,fmt='%.6f')
-        np.savetxt(params.out_prefix+'.THz',phonons.thz,fmt='%.2f')
+        np.savetxt(params.out_prefix+'.THz',phonons.thz,fmt='%.6f')
         for i in range(len(phonons.sed_bands_avg[:,0,0])):
             np.savetxt(params.out_prefix+'_BAND-{}.pSED'
                     .format(i+1),phonons.sed_bands_avg[i,:,:],fmt='%.6f')
